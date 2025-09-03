@@ -11,7 +11,6 @@ headers = {
 
 MAX_THREADS = 10
 
-
 def extract_movie_details(movie_link):
     time.sleep(random.uniform(0, 0.2))
     response = requests.get(movie_link, headers=headers)
@@ -65,7 +64,6 @@ def extract_movies(soup):
     with concurrent.futures.ThreadPoolExecutor(max_workers=threads) as executor:
         executor.map(extract_movie_details, movie_links)
 
-
 def main():
     start_time = time.time()
 
@@ -79,7 +77,6 @@ def main():
 
     end_time = time.time()
     print('Total time taken: ', end_time - start_time)
-
 
 if __name__ == '__main__':
     main()
